@@ -28,8 +28,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="TrinhTheCong"
+            android:text="Trịnh Thế Công - 2050531200109"
             android:textSize="17dp" />
+
 
         <ImageView
             android:layout_width="wrap_content"
