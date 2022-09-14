@@ -22,9 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChildActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".ListItemActivity"/>
         <activity android:name=".DetailActivity"/>
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".ProfileActivity"/>
     </application>
 
 </manifest>
