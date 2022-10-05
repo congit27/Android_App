@@ -26,15 +26,13 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HandleContactScreenOpened();
+                handleOpenContactScreen();
             }
         });
     }
 
-
-    private void HandleContactScreenOpened() {
+    private void handleOpenContactScreen() {
         Intent intent = new Intent(MainActivity.this, ContactActivity.class);
-        intent.setClassName("com.android.baitapcontentprovide", "com.android.baitapcontentprovide.ContactAcitivy");
         startActivity(intent);
     }
 
