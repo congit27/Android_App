@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutItem"
+    android:layout_width="340dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_gravity="center_horizontal"
+    android:paddingBottom="16dp"
+    android:paddingRight="0dp"
+    android:background="@drawable/lines">
+
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:text="10 AM"
+        android:textSize="16sp"
+        android:textColor="@color/colorText"
+        android:fontFamily="@font/nunito_bold"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:paddingLeft="12dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/completed_item_style"
+        android:elevation="5dp"
+        android:translationZ="1dp">
+
+        <TextView
+            android:id="@+id/taskTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learn Javascript"
+            android:layout_marginBottom="2dp"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/poppinsbold"/>
+
+        <TextView
+            android:id="@+id/deadTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To 11 AM"
+            android:textSize="14sp"
+            android:textColor="@color/colorText"
+            android:fontFamily="@font/nunito_bold"/>
+
+
+    </LinearLayout>
+
+    <CheckBox
+        android:buttonTint="#0D42C8"
+        android:id="@+id/stateCb"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:layout_marginLeft="4dp"/>
+
+
+
+</LinearLayout>

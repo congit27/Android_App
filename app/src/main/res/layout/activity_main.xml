@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/gradient_background">
+
+
+    <ImageView
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:src="@drawable/heading"
+        android:layout_marginTop="36px"
+        android:layout_marginBottom="36dp"/>
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TODOS"
+        android:textAlignment="center"
+        android:textSize="76sp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/nunito_semibold"
+        android:textColor="@color/colorText"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Key To Successful Move, Lets Get Listed"
+        android:textAlignment="center"
+        android:fontFamily="@font/nunito_bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="76dp"
+        android:textColor="@color/colorText"/>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:text="Login"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsbold"
+        app:backgroundTint="@null"
+        android:elevation="10dp"
+        android:translationZ="5dp"
+        android:background="@drawable/style_button"/>
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="300dp"
+        android:layout_height="54dp"
+        android:text="Sign Up"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppinsbold"
+        app:backgroundTint="@null"
+        android:elevation="10dp"
+        android:translationZ="5dp"
+        android:background="@drawable/style_button"/>
+</LinearLayout>
