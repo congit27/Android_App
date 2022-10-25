@@ -5,11 +5,20 @@ import java.io.Serializable;
 public class Contact implements Serializable {
     private String phone;
     private String name;
+    private int img;
 
-
-    public Contact(String phone, String name) {
+    public Contact(String phone, String name, int img) {
         this.phone = phone;
         this.name = name;
+        this.img = img;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 
     public String getPhone() {

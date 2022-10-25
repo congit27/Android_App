@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.baitapcontentprovide.adapter.ContactAdapter;
 import com.android.baitapcontentprovide.model.Contact;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class ContactActivity extends AppCompatActivity {
 
     ListView lvContact;
     ArrayList<Contact> listContact;
-    ArrayAdapter<Contact> adapterContact;
+    ContactAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,12 @@ public class ContactActivity extends AppCompatActivity {
             String phone = cursor.getString(positionPhone);
 
             // Đưa vào mảng
-            Contact contact = new Contact(name, phone);
+            Contact contact = new Contact(name, phone, R.drawable.ic_launcher_foreground);
             listContact.add(contact);
-            adapterContact.notifyDataSetChanged();
         }
+        adapter = new ContactAdapter(this, R.layout.contact_item, listContact);
+        lvContact.setAdapter(adapter);
+
 
         // Chuyển dữ liệu
         transferData();
@@ -83,9 +86,5 @@ public class ContactActivity extends AppCompatActivity {
     private void addControls() {
         lvContact = findViewById(R.id.lvContact);
         listContact = new ArrayList<>();
-        adapterContact = new ArrayAdapter<>(
-            ContactActivity.this, android.R.layout.simple_list_item_1,listContact
-        );
-        lvContact.setAdapter(adapterContact);
     }
 }
