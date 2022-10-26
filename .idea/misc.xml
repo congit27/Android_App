@@ -9,16 +9,24 @@
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/gradient_background.xml" value="0.243" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/gradient_background2.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/gradient_card.xml" value="0.229" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" value="0.197" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.197" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/ic_baseline_notifications_active_24.xml" value="0.197" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.197" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/lines.xml" value="0.1095" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/menubar.xml" value="0.152" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_box.xml" value="0.1095" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_box2.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_box3.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_button.xml" value="0.229" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_button2.xml" value="0.197" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_card.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_circle_button.xml" value="0.229" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_cirle.xml" value="0.197" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_edittext.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_negav_button.xml" value="0.229" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/style_textview.xml" value="0.1605" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/drawable/uncompleted_item_style.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/font/montserrat_bold.xml" value="0.28020833333333334" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/activity_detail.xml" value="0.20436083796494228" />
@@ -26,11 +34,14 @@
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/activity_signin.xml" value="0.2" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/activity_signup.xml" value="0.18297101449275363" />
-        <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/activity_todoslist.xml" value="0.176" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/activity_todoslist.xml" value="0.2" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/item_names.xml" value="0.20521590423257802" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/item_names_female.xml" value="0.20521590423257802" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/nav_header_main.xml" value="0.264" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/task_controls_box.xml" value="0.264" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/todo_completed_item.xml" value="0.20436083796494228" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/layout/todo_item.xml" value="0.18297101449275363" />
+        <entry key="..\:/Android/ToDoApp/app/src/main/res/menu/menu_navigation.xml" value="0.12" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.229" />
         <entry key="..\:/Android/ToDoApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.121" />
       </map>

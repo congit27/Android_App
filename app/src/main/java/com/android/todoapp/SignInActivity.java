@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.todoapp.model.User;
+import com.android.todoapp.models.User;
 
 public class SignInActivity extends AppCompatActivity {
     EditText inputUname, inputPword;

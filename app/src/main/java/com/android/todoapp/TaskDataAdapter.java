@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.todoapp.model.Task;
+import com.android.todoapp.models.Task;
 import com.android.todoapp.my_interface.IClickItemTaskListener;
 
 import java.util.List;
