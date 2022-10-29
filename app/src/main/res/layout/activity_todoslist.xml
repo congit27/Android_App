@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawerLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -39,28 +40,32 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.harrywhewell.scrolldatepicker.DayScrollDatePicker
+            android:id="@+id/dayDatePicker"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:layout_marginTop="128dp"
-            android:padding="12dp"
+            app:baseColor="#FF6B6B"
+            app:baseTextColor="#FFFFFF"
+            app:selectedColor="#373737"
+            app:selectedTextColor="#fff"
+            app:showTitle="true"
+            app:showFullDate="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-        </androidx.recyclerview.widget.RecyclerView>
+        </com.harrywhewell.scrolldatepicker.DayScrollDatePicker>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTodosList"
             android:layout_width="match_parent"
-            android:layout_height="560dp"
+            android:layout_height="552dp"
             android:padding="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintVertical_bias="0.12"
-            android:background="@drawable/style_box">
+            android:background="@drawable/style_box4">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -94,21 +99,26 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/arrowleft"
-                app:tint="@color/whiteText" />
-
-            <TextView
+            <LinearLayout
+                android:id="@+id/backActivityBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:fontFamily="@font/nunito_bold"
-                android:paddingLeft="6dp"
-                android:text="Back"
-                android:textColor="@color/whiteText"
-                android:textSize="18dp" />
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/arrowleft"
+                    app:tint="@color/whiteText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:paddingLeft="6dp"
+                    android:text="Back"
+                    android:textColor="@color/whiteText"
+                    android:textSize="18dp" />
+            </LinearLayout>
 
             <View
                 android:layout_width="0dp"
@@ -116,6 +126,7 @@
                 android:layout_weight="1" />
 
             <ImageView
+                android:id="@+id/showMenuBtn"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/menubar"

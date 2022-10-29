@@ -42,7 +42,7 @@
         <EditText
             android:id="@+id/inputUsername"
             android:layout_width="320dp"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:hint="Enter Username"
             android:background="@drawable/style_edittext"
             android:textSize="18dp"
@@ -55,7 +55,7 @@
         <EditText
             android:id="@+id/intputPassword"
             android:layout_width="320dp"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:hint="Enter Password"
             android:textSize="18dp"
             android:layout_marginBottom="12dp"
@@ -69,11 +69,38 @@
         <EditText
             android:id="@+id/inputRePassword"
             android:layout_width="320dp"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:hint="Re-enter Password"
+            android:layout_marginBottom="12dp"
             android:textSize="18dp"
             android:paddingLeft="12dp"
             android:inputType="textPassword"
+            android:background="@drawable/style_edittext"
+            android:drawableLeft="@drawable/ic_baseline_info_24"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/inputName"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+
+            android:layout_marginBottom="12dp"
+            android:hint="Enter full name"
+            android:textSize="18dp"
+            android:paddingLeft="12dp"
+            android:background="@drawable/style_edittext"
+            android:drawableLeft="@drawable/ic_baseline_info_24"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/inputCompany"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:hint="Enter Company"
+            android:textSize="18dp"
+            android:paddingLeft="12dp"
             android:background="@drawable/style_edittext"
             android:drawableLeft="@drawable/ic_baseline_info_24"
             android:drawablePadding="16dp"
@@ -84,7 +111,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="4dp">
 
             <CheckBox
                 android:id="@+id/agreeCb"
@@ -109,7 +136,7 @@
         <Button
             android:id="@+id/signUpBtn"
             android:layout_width="320dp"
-            android:layout_height="54dp"
+            android:layout_height="48dp"
             android:text="Sign Up"
             android:textSize="18sp"
             app:backgroundTint="@null"

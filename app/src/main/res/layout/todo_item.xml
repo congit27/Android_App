@@ -1,65 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layoutItem"
-    android:layout_width="340dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center_vertical"
     android:layout_gravity="center_horizontal"
-    android:paddingBottom="16dp"
-    android:paddingRight="0dp"
-    android:background="@drawable/lines">
-
-    <TextView
-        android:id="@+id/startTime"
-        android:layout_width="54dp"
-        android:layout_height="wrap_content"
-        android:text="10 AM"
-        android:textSize="16sp"
-        android:textColor="@color/colorText"
-        android:fontFamily="@font/nunito_bold"/>
+    android:background="@drawable/item_style"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:paddingLeft="12dp"
-        android:orientation="vertical"
+        android:layout_height="100dp"
         android:gravity="center_vertical"
-        android:layout_weight="1"
-        android:background="@drawable/uncompleted_item_style"
-        android:elevation="5dp"
-        android:translationZ="1dp">
+        android:orientation="vertical"
+        android:paddingLeft="12dp">
 
         <TextView
-            android:id="@+id/taskTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Learn Javascript"
-            android:layout_marginBottom="2dp"
+            android:text="6:15 AM"
             android:textSize="16sp"
-            android:textColor="@color/colorText"
-            android:fontFamily="@font/poppinsbold"/>
+            android:layout_marginBottom="8dp"
+            android:textColor="#A3A3A3"
+            android:fontFamily="@font/nunito_semibold"/>
 
         <TextView
-            android:id="@+id/deadTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="To 11 AM"
-            android:textSize="14sp"
-            android:textColor="@color/colorText"
+            android:text="Dậy đi nào!"
+            android:textSize="24sp"
+            android:textColor="#000"
             android:fontFamily="@font/nunito_bold"/>
-
 
     </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/stateCb"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:buttonTint="#0D42C8"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        android:layout_marginLeft="4dp"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:backgroundTint="@android:color/transparent"
+        android:scaleX="0.5"
+        android:scaleY="0.5"/>
 
 </LinearLayout>

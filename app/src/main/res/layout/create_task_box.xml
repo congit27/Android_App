@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/createTaskBox"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/style_box3"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo Nhiệm Vụ"
+            android:fontFamily="@font/nunito_bold"
+            android:textColor="#FF3838"
+            android:layout_marginTop="4dp"
+            android:textSize="28sp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/closeBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/style_circle"
+            android:padding="4dp"
+            android:src="@drawable/close"
+            app:tint="#000"
+            android:layout_marginBottom="12dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:padding="12dp"
+            android:src="@drawable/writing"
+            app:tint="#FF3838"
+            android:background="@drawable/style_button2"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="Nhập tiêu đề"
+            android:textColorHint="#B1B1B1"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="24dp"
+            android:textColor="#fff"
+            android:padding="4dp"
+            android:background="@drawable/style_edittext2"
+            android:backgroundTint="@null"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thời gian"
+        android:fontFamily="@font/nunito_bold"
+        android:textColor="#D5D5D5"
+        android:layout_marginTop="48dp"
+        android:textSize="24sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="28dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Từ: "
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/timer1Btn"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="10:00:AM"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            android:textSize="14dp"
+            android:layout_marginLeft="12dp"
+            app:iconSize="20dp"
+            app:iconTint="#FF3838"
+            app:iconGravity="textStart"
+            android:background="@drawable/style_button2"
+            android:fontFamily="@font/nunito_bold"
+            android:theme="@style/Theme.MaterialComponents.Light"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Đến: "
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/timer2Btn"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="12:00:AM"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            android:textSize="14dp"
+            android:layout_marginLeft="12dp"
+            app:iconSize="20dp"
+            app:iconTint="#FF3838"
+            app:iconGravity="textStart"
+            android:background="@drawable/style_button2"
+            android:fontFamily="@font/nunito_bold"
+            android:theme="@style/Theme.MaterialComponents.Light"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vào ngày"
+            android:fontFamily="@font/nunito_bold"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:layout_marginRight="8dp"/>
+
+        <TextView
+            android:id="@+id/datepicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27/04/2022"
+            android:fontFamily="@font/nunito_bold"
+            android:textColor="#FF7575"
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:text="Tạo Nhiệm Vụ"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        android:textSize="14dp"
+        app:icon="@drawable/edit"
+        app:iconSize="20dp"
+        app:iconTint="#FF3838"
+        app:iconGravity="textStart"
+        android:background="@drawable/style_button2"
+        android:fontFamily="@font/nunito_bold"
+        android:theme="@style/Theme.MaterialComponents.Light"/>
+
+</LinearLayout>

@@ -1,7 +1,6 @@
 package com.android.todoapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,14 +12,26 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.todoapp.models.User;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class SignUpActivity extends AppCompatActivity {
-    EditText inputUname, inputPword, inputRePword;
+    EditText inputUname, inputPword, inputRePword, inputName, inputCompany;
     CheckBox agreeCb;
     Button signUpBtn;
     TextView openSignInBtn;
     LinearLayout backBtn;
-
-    SharedPreferences newUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,70 +41,128 @@ public class SignUpActivity extends AppCompatActivity {
         mapping();
 
         // Click sign up button
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleClickSignUpBtn();
-            }
-        });
+        handleClickSignUpBtn();
 
         // Click open sign in screen btn
-        openSignInBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleClickOpenSignInBtn();
-            }
-        });
+        handleClickOpenSignInBtn();
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleClickBackBtn();
-            }
-        });
+        // Click back button
+        handleClickBackBtn();
     }
 
     private void mapping() {
         inputUname = (EditText) findViewById(R.id.inputUsername);
         inputPword = (EditText) findViewById(R.id.intputPassword);
         inputRePword = (EditText) findViewById(R.id.inputRePassword);
+        inputName = (EditText) findViewById(R.id.inputName);
+        inputCompany = (EditText) findViewById(R.id.inputCompany);
         agreeCb = (CheckBox) findViewById(R.id.agreeCb);
         signUpBtn = (Button) findViewById(R.id.signUpBtn);
         openSignInBtn = (TextView) findViewById(R.id.openSignInBtn);
         backBtn = (LinearLayout) findViewById(R.id.backBtn);
-
-        newUser = getSharedPreferences("newUser", MODE_PRIVATE);
     }
 
     private void handleClickSignUpBtn() {
-        String username = inputUname.getText().toString().trim();
-        String password = inputPword.getText().toString().trim();
-        String rePassword = inputRePword.getText().toString().trim();
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(
+                    inputUname.getText().toString().equals("") ||
+                    inputPword.getText().toString().equals("") ||
+                    inputRePword.getText().toString().equals("") ||
+                    inputName.getText().toString().equals("") ||
+                    inputCompany.getText().toString().equals("")) {
+                    Toast.makeText(SignUpActivity.this, "Vui lòng nhập đầy đủ thông tin! ", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if(!agreeCb.isChecked()) {
+                    Toast.makeText(SignUpActivity.this, "Vui lòng chọn chấp nhận với chính sách của chúng tôi", Toast.LENGTH_SHORT).show();
+                }
+                else if(!inputPword.getText().toString().trim().equals(inputRePword.getText().toString().trim())) {
+                    Toast.makeText(SignUpActivity.this, "Mật khẩu không giống", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    String username = inputUname.getText().toString().trim();
+                    String password = inputPword.getText().toString().trim();
+                    String name = inputName.getText().toString().trim();
+                    String company = inputCompany.getText().toString().trim();
+                    User user = new User(username, password, name, company);
 
-        if(username.equals("") || password.equals("") || rePassword.equals("")) {
-            Toast.makeText(SignUpActivity.this, "Please enter full information!", Toast.LENGTH_SHORT).show();
-        } else if(!password.equals(rePassword)) {
-            Toast.makeText(SignUpActivity.this, "Password is not same!", Toast.LENGTH_SHORT).show();
-        } else if(agreeCb.isChecked() == false) {
-            Toast.makeText(SignUpActivity.this, "Please read and agree with rules!", Toast.LENGTH_SHORT).show();
-        } else {
-            SharedPreferences.Editor editor = newUser.edit();
-            editor.putString("username", username);
-            editor.putString("password", password);
-            editor.commit();
+                    String url = "https://635d232ccb6cf98e56adbf2f.mockapi.io/api/users";
+                    RequestQueue queue = Volley.newRequestQueue(SignUpActivity.this);
 
-            Intent intent = new Intent(SignUpActivity.this, ProfileActivity.class);
-            startActivity(intent);
-        }
+                    StringRequest request = new StringRequest(
+                            Request.Method.POST,
+                            url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    try {
+                                        JSONObject respObj = new JSONObject(response);
+                                        Toast.makeText(SignUpActivity.this, "Hello " + respObj.getString("name"), Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(SignUpActivity.this, TodoListActivity.class);
+                                        startActivity(intent);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Toast.makeText(SignUpActivity.this, "Fail to get response = " + error, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                    ) {
+                        @Override
+                        protected Map<String, String> getParams() {
+                            // below line we are creating a map for
+                            // storing our values in key and value pair.
+                            Map<String, String> params = new HashMap<String, String>();
+
+                            // on below line we are passing our key
+                            // and value pair to our parameters.
+                            params.put("name", user.getName());
+                            params.put("company", user.getCompany());
+                            params.put("username", user.getUsername());
+                            params.put("password", user.getPassword());
+
+                            // at last we are
+                            // returning our params.
+                            return params;
+                        }
+                    };
+                    queue.add(request);
+                }
+            }
+
+        });
     }
 
+    // Handle clicked open signin button
     private void handleClickOpenSignInBtn() {
-        Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-        startActivity(intent);
+        openSignInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+
     }
 
+    // Handle clicked back button
     private void handleClickBackBtn() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
