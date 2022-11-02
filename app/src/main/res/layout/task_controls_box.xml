@@ -30,6 +30,7 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/dateTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6:15, 26/10/2022"
@@ -38,6 +39,7 @@
                 android:textSize="16sp"/>
 
             <TextView
+                android:id="@+id/taskTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dậy đi nào!"
@@ -49,6 +51,7 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/closeBtn"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="@drawable/style_circle"
@@ -65,6 +68,7 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteTaskBtn"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/style_button2"
@@ -81,6 +85,7 @@
             android:layout_weight="1"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/copyTaskBtn"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/style_button2"
@@ -99,6 +104,7 @@
             android:layout_weight="1"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/setDoneTaskBtn"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/style_button2"
@@ -116,6 +122,7 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/updateTaskBtn"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginTop="24dp"

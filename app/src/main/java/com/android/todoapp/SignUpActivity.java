@@ -87,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
                     String company = inputCompany.getText().toString().trim();
                     User user = new User(username, password, name, company);
 
-                    String url = "https://635d232ccb6cf98e56adbf2f.mockapi.io/api/users";
+                    String url = "https://fake-api-todosapp.herokuapp.com/users";
                     RequestQueue queue = Volley.newRequestQueue(SignUpActivity.this);
 
                     StringRequest request = new StringRequest(
@@ -99,8 +99,6 @@ public class SignUpActivity extends AppCompatActivity {
                                     try {
                                         JSONObject respObj = new JSONObject(response);
                                         Toast.makeText(SignUpActivity.this, "Hello " + respObj.getString("name"), Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(SignUpActivity.this, TodoListActivity.class);
-                                        startActivity(intent);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -131,6 +129,11 @@ public class SignUpActivity extends AppCompatActivity {
                             return params;
                         }
                     };
+                    Intent intent = new Intent(SignUpActivity.this, TodoListActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("objectUser", user);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                     queue.add(request);
                 }
             }

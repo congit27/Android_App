@@ -8,14 +8,12 @@
     android:background="@drawable/gradient_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@drawable/gradient_background">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/headingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
@@ -28,6 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/dateTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="92dp"
@@ -57,14 +56,15 @@
         </com.harrywhewell.scrolldatepicker.DayScrollDatePicker>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTodosList"
+            android:id="@+id/rvTasks"
             android:layout_width="match_parent"
             android:layout_height="552dp"
-            android:padding="12dp"
+            android:paddingTop="36dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.12"
             android:background="@drawable/style_box4">
 
         </androidx.recyclerview.widget.RecyclerView>
@@ -133,6 +133,8 @@
                 app:tint="@color/whiteText" />
         </LinearLayout>
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     
     <com.google.android.material.navigation.NavigationView
@@ -146,4 +148,5 @@
         app:itemIconTint="#CF3535"
         app:itemTextColor="#000000"
         app:itemVerticalPadding="20dp"/>
+
 </androidx.drawerlayout.widget.DrawerLayout>

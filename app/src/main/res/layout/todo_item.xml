@@ -8,7 +8,8 @@
     android:layout_gravity="center_horizontal"
     android:background="@drawable/item_style"
     android:layout_marginLeft="1dp"
-    android:layout_marginRight="1dp">
+    android:layout_marginRight="1dp"
+    android:layout_marginBottom="24dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,20 +19,22 @@
         android:paddingLeft="12dp">
 
         <TextView
+            android:id="@+id/timeline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="6:15 AM"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"
-            android:textColor="#A3A3A3"
+            android:textColor="#DFDFDF"
             android:fontFamily="@font/nunito_semibold"/>
 
         <TextView
+            android:id="@+id/taskTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dậy đi nào!"
             android:textSize="24sp"
-            android:textColor="#000"
+            android:textColor="#fff"
             android:fontFamily="@font/nunito_bold"/>
 
     </LinearLayout>
@@ -42,6 +45,7 @@
         android:layout_weight="1"/>
 
     <CheckBox
+        android:id="@+id/taskState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:button="@null"

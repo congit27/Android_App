@@ -1,6 +1,8 @@
 package com.android.todoapp.models;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String id, username, password, name, company;
 
     public User(String id, String username, String password, String name, String company) {

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.todoapp.models.Task;
 import com.android.todoapp.models.User;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -76,7 +77,7 @@ public class SignInActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         List<User> users = new ArrayList<>();
 
-        String url = "https://635d232ccb6cf98e56adbf2f.mockapi.io/api/users";
+        String url = "https://fake-api-todosapp.herokuapp.com/users";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
                 url,
@@ -99,6 +100,40 @@ public class SignInActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
+                        loginBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if(inputUname.getText().toString().equals("") || inputPword.getText().toString().equals("")) {
+                                    Toast.makeText(SignInActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    for (User user : users ) {
+                                        if(inputUname.getText().toString().equals(user.getUsername()) && inputPword.getText().toString().equals(user.getPassword())) {
+                                            if(rememberCb.isChecked()) {
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putString("username", inputUname.getText().toString().trim());
+                                                editor.putString("password", inputPword.getText().toString().trim());
+                                                editor.putBoolean("checked", true);
+                                                editor.commit();
+                                            } else {
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putString("username", "");
+                                                editor.putString("password", "");
+                                                editor.putBoolean("checked", false);
+                                                editor.commit();
+                                            }
+                                            Intent intent = new Intent(SignInActivity.this, TodoListActivity.class);
+                                            Bundle bundle = new Bundle();
+                                            bundle.putSerializable("objectUser", user);
+                                            intent.putExtras(bundle);
+                                            startActivity(intent);
+                                            return;
+                                        }
+                                    }
+
+                                    Toast.makeText(SignInActivity.this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                     }
                 },
                 new Response.ErrorListener() {
@@ -110,37 +145,6 @@ public class SignInActivity extends AppCompatActivity {
         );
         requestQueue.add(jsonArrayRequest);
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(inputUname.getText().toString().equals("") || inputPword.getText().toString().equals("")) {
-                    Toast.makeText(SignInActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
-                } else {
-                    for (User user : users ) {
-                        if(inputUname.getText().toString().equals(user.getUsername()) && inputPword.getText().toString().equals(user.getPassword())) {
-                            if(rememberCb.isChecked()) {
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString("username", inputUname.getText().toString().trim());
-                                editor.putString("password", inputPword.getText().toString().trim());
-                                editor.putBoolean("checked", true);
-                                editor.commit();
-                            } else {
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString("username", "");
-                                editor.putString("password", "");
-                                editor.putBoolean("checked", false);
-                                editor.commit();
-                            }
-                            Intent intent = new Intent(SignInActivity.this, TodoListActivity.class);
-                            startActivity(intent);
-                            return;
-                        }
-                    }
-
-                    Toast.makeText(SignInActivity.this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     // Handle clicked Open SignUp button

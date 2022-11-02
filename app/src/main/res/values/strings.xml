@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDoApp</string>
+    <string name="app_name">TODOS</string>
     <string name="navi_home">Home</string>
     <string name="navi_list">Todos List</string>
     <string name="navi_setting">Settings</string>

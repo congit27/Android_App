@@ -3,20 +3,51 @@ package com.android.todoapp.models;
 import java.io.Serializable;
 
 public class Task implements Serializable {
+    private String id;
+    private String userId;
     private String title;
     private String startTime;
     private String endTime;
-    private String detail;
+    private String date;
     private Boolean state;
 
-    public Task(String title, String startTime, String endTime, String detail, Boolean state) {
+    public Task() {
+    }
+
+    public Task(String userId, String title, String startTime, String endTime, String date, Boolean state) {
+        this.userId = userId;
         this.title = title;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.detail = detail;
+        this.date = date;
         this.state = state;
     }
 
+    public Task(String id, String userId, String title, String startTime, String endTime, String date, Boolean state) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.date = date;
+        this.state = state;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public String getTitle() {
         return title;
@@ -42,15 +73,15 @@ public class Task implements Serializable {
         this.endTime = endTime;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getDate() {
+        return date;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public Boolean isCompleted() {
+    public Boolean getState() {
         return state;
     }
 

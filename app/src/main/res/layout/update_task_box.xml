@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/createTaskBox"
+    android:id="@+id/updateTaskBox"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tạo Nhiệm Vụ"
+            android:text="Sửa nhiệm vụ"
             android:fontFamily="@font/nunito_bold"
             android:textColor="#FF3838"
             android:layout_marginTop="4dp"
@@ -67,7 +67,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:hint="Nhập tiêu đề"
             android:textColorHint="#B1B1B1"
             android:layout_marginLeft="12dp"
             android:fontFamily="@font/nunito_semibold"
@@ -181,11 +180,11 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/addTaskBtn"
+        android:id="@+id/saveChangeBtn"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginTop="24dp"
-        android:text="Tạo Nhiệm Vụ"
+        android:text="Lưu"
         android:textAllCaps="false"
         app:backgroundTint="@null"
         android:textSize="14dp"
