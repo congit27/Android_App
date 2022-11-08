@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "233690006999",
+    "project_id": "modulelogin-8ce1a",
+    "storage_bucket": "modulelogin-8ce1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233690006999:android:67f966d350823e417ab792",
+        "android_client_info": {
+          "package_name": "com.android.baitap_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233690006999-7lo2ot368cto94s8las20m1i2aoc73u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.baitap_firebase",
+            "certificate_hash": "3b58d96095c0fff0161e1dea5e7bbbc128baf55f"
+          }
+        },
+        {
+          "client_id": "233690006999-2ci5iu21oup83h1hfi3lr80gbk54urht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz2PVhFJpbqk4SB9-p3KfFZVNOKZ7sFYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233690006999-2ci5iu21oup83h1hfi3lr80gbk54urht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

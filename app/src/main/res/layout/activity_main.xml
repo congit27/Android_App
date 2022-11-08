@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center_horizontal"
+    android:padding="32dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/inputCode"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:hint="Enter student code"
+        android:background="@drawable/style_edittext"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="12dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/nunito_semibold"/>
+
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:hint="Enter student name"
+        android:background="@drawable/style_edittext"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="12dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/nunito_semibold"/>
+    <Button
+        android:id="@+id/addStudent"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:text="Add"
+        android:textSize="18sp"
+        app:backgroundTint="@null"
+        android:background="@drawable/style_button"
+        android:fontFamily="@font/poppinsbold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/studentsRV"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginTop="36dp"
+        android:padding="12dp"/>
+</LinearLayout>
