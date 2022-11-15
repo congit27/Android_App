@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/style_edittext"
+    android:padding="10dp"
+    android:layout_marginBottom="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="4dp"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/img"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Name"
+        android:textColor="#ff00"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/stage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/img"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Description"
+        android:textColor="#2ACC93"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stage"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Description"
+        android:layout_toRightOf="@+id/img"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp"/>
+
+    <ImageView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="64px"
+        android:layout_below="@+id/country"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/img"
+        android:src="@drawable/five"
+        app:tint="#FFC107"
+        android:scaleX="2"
+        android:scaleY="2"/>
+
+</RelativeLayout>
