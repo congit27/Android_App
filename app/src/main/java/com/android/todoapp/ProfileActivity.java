@@ -63,6 +63,9 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, TodoListActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("objectUser", user);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });

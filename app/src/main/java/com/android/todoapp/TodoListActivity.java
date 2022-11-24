@@ -144,6 +144,7 @@ public class TodoListActivity extends AppCompatActivity implements NavigationVie
                 Toast.makeText(TodoListActivity.this, currentDay+" " + currentMonth + " " +currentYear, Toast.LENGTH_SHORT).show();
 
                 JSON_URL = "https://fake-api-todosapp.herokuapp.com/tasks?userId="+user.getId()+"&"+"date="+currentDay+",+"+currentMonth+",+"+currentYear;
+                dateTV.setText(currentDay+" " + currentMonth + " " +currentYear);
                 handleRecyclerViewTasks();
             }
         });
@@ -155,6 +156,9 @@ public class TodoListActivity extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TodoListActivity.this, ProfileActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("objectUser", user);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
