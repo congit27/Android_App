@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_style"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:layout_marginVertical="24dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/languagueName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textSize="24sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#061D70"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Là một ngôn ngữ Giécmanh Tây thuộc ngữ hệ Ấn-Âu. Dạng thức cổ nhất của ngôn ngữ này được nói bởi những cư dân trên mảnh đất Anh thời sơ kỳ trung cổ."
+            android:textSize="16sp"
+            android:textColor="#FB3131"
+            android:fontFamily="@font/nunito_bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>
